@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pl">
+{% load posts_extras %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Title</title>
+
+    </head>
+    <body>
+        <h1>Lista postów</h1>
+        <ul>
+            {% for post in posts %}
+                <li>{{ post }}{% if post.sponsored %} (sponsorowany) {% endif %}</li>
+                <small>
+                (signs: {% count_sings post.content %},
+                words: {% count_words post.content %})
+                </small>
+
+            {% endfor %}
+        </ul>
+    </body>
+</html>

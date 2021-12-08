@@ -6,3 +6,7 @@ from django.http import HttpResponse
 
 def hello_world(request):
     return HttpResponse('Hello world')
+
+
+def about(request):
+    return render(request, 'main/about.html')
