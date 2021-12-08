@@ -1,0 +1,20 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$320000$NPSMY3LUd3sgpHHyGFCqDd$XKTgPn2hYghT8p9dcZTwgWBl52Q1vf7LQCsZHCDTsVo=",
+    "last_login": "2021-12-07T15:09:54.437Z",
+    "is_superuser": true,
+    "username": "darek",
+    "first_name": "",
+    "last_name": "",
+    "email": "q@q.pl",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-12-07T15:08:31.192Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

@@ -1,0 +1,13 @@
+[
+{
+  "model": "books.book",
+  "pk": 1,
+  "fields": {
+    "title": "Ogniem i Mieczem",
+    "description": "o wojence",
+    "available": true,
+    "publication_year": 1905,
+    "author": "Henryk Sienkiewicz"
+  }
+}
+]

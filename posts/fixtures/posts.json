@@ -1,0 +1,62 @@
+[
+{
+  "model": "posts.post",
+  "pk": 1,
+  "fields": {
+    "title": "Pierwszy post",
+    "content": "Jakiś tam tekst",
+    "published": false,
+    "created": "2021-12-07T16:45:51.779Z",
+    "modified": "2021-12-07T16:45:51.779Z",
+    "sponsored": false
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 2,
+  "fields": {
+    "title": "test",
+    "content": "test",
+    "published": false,
+    "created": "2021-12-07T18:50:57.276Z",
+    "modified": "2021-12-07T18:50:57.276Z",
+    "sponsored": false
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 3,
+  "fields": {
+    "title": "Ala",
+    "content": "",
+    "published": false,
+    "created": "2021-12-07T18:57:00.042Z",
+    "modified": "2021-12-07T18:57:00.042Z",
+    "sponsored": false
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 4,
+  "fields": {
+    "title": "Darek",
+    "content": "",
+    "published": false,
+    "created": "2021-12-07T18:57:46.440Z",
+    "modified": "2021-12-07T18:57:46.440Z",
+    "sponsored": false
+  }
+},
+{
+  "model": "posts.post",
+  "pk": 5,
+  "fields": {
+    "title": "Nowy post",
+    "content": "Nowy post wpisany z panelu administratora sponsorowany",
+    "published": true,
+    "created": "2021-12-08T12:37:52.957Z",
+    "modified": "2021-12-08T12:37:52.957Z",
+    "sponsored": true
+  }
+}
+]
