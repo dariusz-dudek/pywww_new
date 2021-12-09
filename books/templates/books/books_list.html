@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Lista książek{% endblock %}
+
+{% block content %}
+    <h1>Lista książek</h1>
+        <ul>
+            {% for book in books %}
+                <li>{{ book.title }} {{ book.author }}
+                    {% if book.available %}
+                        (na półce)
+                    {% else %}
+                        (wypożyczona)
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+{% endblock %}

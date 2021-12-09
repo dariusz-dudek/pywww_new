@@ -16,4 +16,3 @@ def create_posts(n=10):
             modified=c + faker.time_delta(10)
         )
         post.save()
-

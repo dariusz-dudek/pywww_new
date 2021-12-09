@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Book
 
 
-def index(request):
-    return HttpResponse('<h1>Tu będzie moja biblioteka</h1>')
+def books_list(request):
+    books = Book.objects.all()
+    return render(request, 'books/books_list.html', {'books': books})
