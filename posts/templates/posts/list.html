@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% load posts_extras %}
+
+{% block title %}Lista postów{% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'posts/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+        <h1 class="title">Lista postów</h1>
+        <ul class="list-group">
+            {% for post in posts %}
+                <a class="list-group-item" href="{% url 'posts:details' post.id %}">{{ post }}{% if post.sponsored %} (sponsorowany) {% endif %}
+{#                <small>#}
+{#                (signs: {% count_sings post.content %},#}
+{#                words: {% count_words post.content %})#}
+{#                </small>#}
+                </a>
+            {% endfor %}
+        </ul>
+{% endblock %}
