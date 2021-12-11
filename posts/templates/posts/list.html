@@ -15,10 +15,6 @@
         <ul class="list-group">
             {% for post in posts %}
                 <a class="list-group-item" href="{% url 'posts:details' post.id %}">{{ post }}{% if post.sponsored %} (sponsorowany) {% endif %}
-{#                <small>#}
-{#                (signs: {% count_sings post.content %},#}
-{#                words: {% count_words post.content %})#}
-{#                </small>#}
                 </a>
             {% endfor %}
         </ul>

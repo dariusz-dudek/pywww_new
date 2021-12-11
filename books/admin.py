@@ -1,9 +1,29 @@
 from django.contrib import admin
-from .models import Book
+from .models import Book, Author
+from import_export import resources
+from import_export.admin import ExportMixin
+
+
+class BookResource(resources.ModelResource):
+    class Meta:
+        model = Book
+
+
+class AuthorResource(resources.ModelResource):
+    class Meta:
+        model = Author
 
 
 @admin.register(Book)
-class BookAdmin(admin.ModelAdmin):
-    list_display = ['id', 'title', 'author', 'publication_year']
+class BookAdmin(ExportMixin, admin.ModelAdmin):
+    list_display = ['id', 'title', 'available']
     search_fields = ['title', 'description', 'author']
     list_filter = ['available']
+    resource_class = BookResource
+
+
+@admin.register(Author)
+class AuthorAdmin(ExportMixin, admin.ModelAdmin):
+    list_display = ['id', 'name', 'birth_year']
+    search_fields = ['name']
+    resource_class = AuthorResource

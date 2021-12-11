@@ -1,18 +1,14 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block title %}Lista książek{% endblock %}
 
 {% block content %}
-    <h1>Lista książek</h1>
-        <ul>
+    <h1 class="card-title">Lista książek</h1>
+        <ul class="list-group">
             {% for book in books %}
-                <li>{{ book.title }} {{ book.author }}
-                    {% if book.available %}
-                        (na półce)
-                    {% else %}
-                        (wypożyczona)
-                    {% endif %}
-                </li>
+                <a class="list-group-item" href="{% url 'books:details' book.id %}">{{ book.title }}{% if book.available %}(na półce){% else %}(wypożyczona){% endif %} </a>
             {% endfor %}
         </ul>
 {% endblock %}
