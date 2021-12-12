@@ -14,8 +14,10 @@
         <h1 class="title">Lista postów</h1>
         <ul class="list-group">
             {% for post in posts %}
+
                 <a class="list-group-item" href="{% url 'posts:details' post.id %}">{{ post }}{% if post.sponsored %} (sponsorowany) {% endif %}
                 </a>
+
             {% endfor %}
         </ul>
 {% endblock %}
