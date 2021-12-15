@@ -17,7 +17,7 @@ class AuthorResource(resources.ModelResource):
 @admin.register(Book)
 class BookAdmin(ExportMixin, admin.ModelAdmin):
     list_display = ['id', 'title', 'available']
-    search_fields = ['title', 'description', 'author']
+    search_fields = ['title', 'description', 'authors__name']
     list_filter = ['available']
     resource_class = BookResource
 

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Dodawanie posta{% endblock %}
+
+{% block content %}
+
+    {% crispy form form.helper %}
+
+{#    <h1>Dodanie nowego posta</h1>#}
+{#    <form method="POST" class="form-label">#}
+{#        {% csrf_token %}#}
+{#        <p>#}
+{#            <input type="text" class="form-control" name="title" id="id_title" required placeholder="Tytuł">#}
+{#        </p>#}
+{#        <p>#}
+{#            <textarea class="form-control" name="content" id="id_content" cols="90" rows="5" required placeholder="Treść"></textarea>#}
+{#        </p>#}
+{#        <p>#}
+{#            <input type="checkbox" class="form-check-input" id="id_published">#}
+{#            <label class="form-check-label" for="id_published">Opublikowany</label>#}
+{#        </p>#}
+{#        <p>#}
+{#            <input type="checkbox" class="form-check-input" id="id_sponsored">#}
+{#            <label class="form-check-label" for="id_sponsored">Sponsorowany</label>#}
+{#        </p>#}
+{#        <p>#}
+{#            <input class="form-control" type="file" name="example_file" id="id_example_file"><br>#}
+{#        </p>#}
+{#        <p>#}
+{#            <input class="form-control" type="file" name="image" id="id_image" accept="image/*"><br>#}
+{#        </p>#}
+{#            <input type="submit" class="btn btn-primary" value="Dodaj">#}
+{#    </form>#}
+{##}
+
+
+{% endblock %}

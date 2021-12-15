@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'django_extensions',
     'import_export',
+    'crispy_forms',
 
     'posts.apps.PostsConfig',
     'books.apps.BooksConfig',
@@ -139,3 +140,5 @@ SHELL_PLUS_PRINT_SQL = True
 MEDIA_ROOT = BASE_DIR / "media"
 
 MEDIA_URL = "/media/"
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

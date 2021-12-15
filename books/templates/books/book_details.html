@@ -12,6 +12,11 @@
 
         </ul>
     </div>
+    {% if book.cover %}
+        <div>
+            <img src="{{ book.cover.url }}" class="img-thumbnail" alt="image">
+        </div>
+    {% endif %}
 
 
 {% endblock %}

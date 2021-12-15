@@ -4,10 +4,10 @@ from datetime import datetime
 
 
 class Post(Timestamped):
-    title = models.CharField(max_length=255)
-    content = models.TextField()
-    published = models.BooleanField(default=False)
-    sponsored = models.BooleanField(default=False)
+    title = models.CharField(verbose_name='Tytuł', max_length=255)
+    content = models.TextField(verbose_name='Treść')
+    published = models.BooleanField(verbose_name='Opublikowany', default=False)
+    sponsored = models.BooleanField(verbose_name='Sponsorowany', default=False)
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     tags = models.ManyToManyField('tags.Tag', related_name='posts')
     example_file = models.FileField(upload_to='posts/examples/', blank=True, null=True)

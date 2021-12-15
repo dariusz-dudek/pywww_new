@@ -11,6 +11,13 @@
 {% endblock %}
 
 {% block content %}
+    <div class="row">
+        <form>
+            <input type="text" id="q" name="q">
+            <input type="submit" value="search">
+        </form>
+    </div>
+
         <h1 class="title">Lista postów</h1>
         <ul class="list-group">
             {% for post in posts %}
