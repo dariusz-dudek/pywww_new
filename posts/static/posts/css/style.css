@@ -7,3 +7,5 @@
 /*ul li:nth-child(odd) a {*/
 /*    color: #fff;*/
 /*}*/
+ul:nth-child(odd) a {background-color: lavender}
+.select2-selection__rendered {border: 1px solid lightgray}

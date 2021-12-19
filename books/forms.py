@@ -7,7 +7,8 @@ from .models import Book
 class BookForm(forms.ModelForm):
     class Meta:
         model = Book
-        fields = ['title', 'description', 'available', 'publication_year', 'authors', 'tags', 'cover']
+        # fields = ['title', 'description', 'available', 'publication_year', 'authors', 'tags', 'cover']
+        fields = '__all__'
         labels = {
             'title': 'Tytuł',
             'description': 'Opis',
@@ -22,7 +23,7 @@ class BookForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper()
         self.helper.form_method = 'post'
-        self.helper.form_action = '?'
+        self.helper.form_action = 'books:add'
         self.helper.layout = Layout(
             Fieldset(
                 'Dodawanie książki',
@@ -39,3 +40,12 @@ class BookForm(forms.ModelForm):
                 css_class='d-flex justify-content-end'
             )
         )
+
+
+class BookBorrowForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_method = 'post'
+        self.helper.add_input(Submit('borrow', 'Wypożycz'))
+
