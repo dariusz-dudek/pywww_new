@@ -13,7 +13,8 @@ def create_books(n=10):
         book.publication_year = randint(-1000, 2020)
         book.description = faker.text(randint(100, 400))
         book.save()
-        book.author.add(choice(authors))
+        book.authors.add(choice(authors))
+        book.save()
 
 
 def create_authors(n=10):
