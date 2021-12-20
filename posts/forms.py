@@ -5,15 +5,17 @@ from .models import Post
 
 
 class PostForm(forms.ModelForm):
+
     class Meta:
         model = Post
-        fields = ['title', 'content', 'sponsored', 'published', 'image']
+        fields = ['title', 'content', 'sponsored', 'published', 'image', 'tags']
         labels = {
             'title': 'Tytuł',
             'content': 'Treść',
             'sponsored': 'Sponsorowany',
             'published': 'Opublikowany',
-            'image': 'Obraz'
+            'image': 'Obraz',
+            'tags': 'Tagi'
         }
 
     def __init__(self, *args, **kwargs):
@@ -28,7 +30,8 @@ class PostForm(forms.ModelForm):
                 'content',
                 'sponsored',
                 'published',
-                'image'
+                'image',
+                'tags'
             ),
             ButtonHolder(
                 Submit('submit', 'Dodaj', css_class='btn btn-primary'),
