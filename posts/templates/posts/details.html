@@ -27,4 +27,5 @@
                 <img src="{{ post.image.url }}" class="img-thumbnail" alt="image">
             </div>
         {% endif %}
+        <a href="{% url "posts:edit" post.id %}" class="btn btn-primary">Edycja</a>
 {% endblock %}
