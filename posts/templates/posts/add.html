@@ -2,7 +2,13 @@
 
 {% load crispy_forms_tags %}
 
+{% load static %}
+
 {% block title %}Dodawanie posta{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'posts/css/style.css' %}">
+{% endblock %}
 
 {% block content %}
 
