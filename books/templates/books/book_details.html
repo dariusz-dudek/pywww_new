@@ -6,7 +6,16 @@
     <h2>{{ book.title }}</h2>
     <div>
         <ul>
-            <li>Autor: {{ book.author }}</li>
+            {% if book.authors.all|length == 1 %}
+                <li>Autor: {{ book.authors.first }}</li>
+            {% else %}
+                <li>Autorzy:</li>
+                {% for author in book.authors.all %}
+                    {{ author.name }}<br>
+                {% endfor %}
+            {% endif %}
+
+
             <li>Rok wydania: {{ book.publication_year }}</li>
             <li>Opis: {{ book.description }}</li>
 
