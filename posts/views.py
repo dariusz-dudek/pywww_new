@@ -3,17 +3,20 @@ from .models import Post
 from .forms import PostForm
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.core.paginator import Paginator
 
 
 def posts_list(request):
     posts = Post.objects.filter(published=True)
     q = request.GET.get('q')
+
     if q:
-        if q == '':
-            posts = Post.objects.filter(published=True)
-        else:
-            posts = posts.filter(title__icontains=q)
-    return render(request, 'posts/list.html', {'posts': posts})
+        posts = posts.filter(title__icontains=q)
+
+    paginator = Paginator(posts, 10)
+    page_number = request.GET.get('page')
+    posts_lis = paginator.get_page(page_number)
+    return render(request, 'posts/list.html', {'posts_lis': posts_lis})
 
 
 def post_details(request, pk):
@@ -48,6 +51,7 @@ def edit_post(request, post_id):
             instance = form.save(commit=False)
             instance.author = request.user
             instance.save()
+            form.save_m2m()
     else:
         form = PostForm(instance=post)
 

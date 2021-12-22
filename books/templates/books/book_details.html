@@ -1,31 +1,35 @@
 {% extends 'base.html' %}
 
-{% block title %}Book details{% endblock %}
+{% block title %}{{ book.title }}{% endblock %}
 
 {% block content %}
-    <h2>{{ book.title }}</h2>
-    <div>
-        <ul>
-            {% if book.authors.all|length == 1 %}
-                <li>Autor: {{ book.authors.first }}</li>
-            {% else %}
-                <li>Autorzy:</li>
-                {% for author in book.authors.all %}
-                    {{ author.name }}<br>
-                {% endfor %}
-            {% endif %}
-
-
-            <li>Rok wydania: {{ book.publication_year }}</li>
-            <li>Opis: {{ book.description }}</li>
-
-        </ul>
-    </div>
-    {% if book.cover %}
-        <div>
-            <img src="{{ book.cover.url }}" class="img-thumbnail" alt="image">
+    <h1>{{ book.title }}</h1>
+    <div class="row">
+        <div class="col-md-6 text-center">{% if book.cover %}<img src="{{ book.cover.url }}" alt="cover" width="200">{% endif %}
         </div>
-    {% endif %}
+        <div class="col-md-6">
+            <div>
+                {% if book.available %}
+                    <div class="alert alert-success" role="alert">Dostępna</div>
+                {% else %}
+                    <div class="alert alert-danger" role="alert">Wypożyczona</div>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if book.authors.all|length == 1 %}
+            <div>Autor: {{ book.authors.first }}</div>
+        {% else %}
+            <div>Autorzy:</div>
+            {% for author in book.authors.all %}
+                {{ author.name }}<br>
+            {% endfor %}
+        {% endif %}
 
 
+        <div>Rok wydania: {{ book.publication_year }}</div>
+        <div>Opis:</div>
+        <div>{{ book.description }}</div>
+
+    </div>
 {% endblock %}

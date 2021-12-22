@@ -9,4 +9,9 @@
 /*}*/
 /*li:nth-child(odd) a {background-color: lavender}*/
 
-.select2 {border: 1px solid lightgray}
+.select2-selection__rendered {border: 1px solid lightgray}
+
+.select2-container {
+    min-width: 15em !important;
+    width: 100% !important;
+}

@@ -5,16 +5,17 @@ from django.contrib.admin.widgets import AutocompleteSelectMultiple
 from django.contrib import admin
 from tags.models import Tag
 from .models import Post
+from dal import autocomplete
 
 
 class PostForm(forms.ModelForm):
     tags = forms.ModelMultipleChoiceField(
         queryset=Tag.objects.all(),
-        widget=AutocompleteSelectMultiple(
-            Post._meta.get_field('tags'),
-
-            admin.AdminSite()
-        )
+        widget=autocomplete.ModelSelect2Multiple(url='tags:tag-autocomplete')
+        # widget=AutocompleteSelectMultiple(
+        #     Post._meta.get_field('tags'),
+        #     admin.AdminSite()
+        # )
     )
 
     class Meta:

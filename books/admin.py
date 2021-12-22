@@ -16,9 +16,11 @@ class AuthorResource(resources.ModelResource):
 
 @admin.register(Book)
 class BookAdmin(ExportMixin, admin.ModelAdmin):
+    exclude = ['authors']
     list_display = ['id', 'title', 'available']
     search_fields = ['title', 'description', 'authors__name']
     list_filter = ['available']
+    autocomplete_fields = ['tags']
     resource_class = BookResource
 
 
