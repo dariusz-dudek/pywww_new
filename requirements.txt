@@ -7,3 +7,5 @@ Faker==9.5.2
 ipython
 Pillow
 PyYAML==6.0
+sorl-thumbnail
+python-memcached

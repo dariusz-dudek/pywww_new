@@ -1,6 +1,7 @@
 from django.db import models
 from common.models import Timestamped
 from datetime import datetime
+from sorl.thumbnail import ImageField
 
 
 class Post(Timestamped):
@@ -12,7 +13,7 @@ class Post(Timestamped):
     tags = models.ManyToManyField('tags.Tag', related_name='posts')
     example_file = models.FileField(upload_to='posts/examples/', blank=True, null=True)
     image_width = models.IntegerField(blank=True, null=True, editable=False)
-    image = models.ImageField(upload_to=f'posts/images/%Y/%m/%d', null=True, width_field='image_width')
+    image = ImageField(upload_to='posts/images/%Y/%m/%d', null=True, width_field='image_width')
 
     def __str__(self):
         return f'{self.id}: {self.title} '
